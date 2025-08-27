@@ -49,6 +49,8 @@ def test_predict_success():
         # Vérification que la réponse contient les clés prédiction et proba
         assert "prediction" in data
         assert "proba" in data
+        assert isinstance(data["proba"], (float, int))
+        assert 0.0 <= float(data["proba"]) <= 1.0
 
 
 # Test de la route predict avec un client inexistant
