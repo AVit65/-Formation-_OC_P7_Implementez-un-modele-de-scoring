@@ -146,7 +146,7 @@ elif section == "Outil d'aide à la décision":
             with st.spinner("Prédiction en cours, merci de patienter..."):
                 try:
                     # Appel API pour prédiction
-                    url = os.getenv(f"{API_URL}/predict", "http://localhost:8001/predict")
+                    url = f"{API_URL}/predict"
                     payload = {"client_id": int(client_id)}
                     response = requests.post(url, json=payload)
 
