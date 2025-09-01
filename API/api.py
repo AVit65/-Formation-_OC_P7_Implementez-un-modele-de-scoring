@@ -7,9 +7,8 @@ API compatible avec deux modes de lancement :
 
 Fonctionnalités :
 - Chargement du pipeline ML et des données clients au démarrage
-- Routes pour prédiction, SHAP global/local, informations sur les variables
+- Routes pour prédiction
 - Gestion des erreurs et logging
-- Lazy loading pour fichiers lourds (SHAP, raw_data, variable_type)
 
 Auteur : [Aline Vitrac]
 Date : [17/08/2025]
@@ -49,11 +48,13 @@ logger = logging.getLogger("uvicorn.error")
 # Gestion des erreurs
 # ----------------------------------------------------------------------------
 
+# Erreur non spécifique
 @app.exception_handler(Exception)
 async def all_exception_handler(request: Request, exc: Exception):
     logger.error(f"Erreur non gérée : {exc}", exc_info=True)
     return JSONResponse(status_code=500, content={"detail": str(exc)})
 
+# Erreur de validation
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     logger.error(f"Validation error: {exc}", exc_info=True)
@@ -72,9 +73,6 @@ async def load_resources():
     logger.info("Chargement des ressources principales...")
     app.state.pipeline = joblib.load(PIPELINE_PATH)
     app.state.clients_df = pd.read_csv(CLIENT_PATH).set_index("SK_ID_CURR")
-
-
-
 
 # ----------------------------------------------------------------------------
 # Définition des Pydantic Models
