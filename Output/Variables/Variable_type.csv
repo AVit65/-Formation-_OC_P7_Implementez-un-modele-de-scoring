@@ -1,0 +1,123 @@
+variable,plot_type
+nb_credit_approuves,boxplot
+montant_mensuel_min,boxplot
+montant_mensuel_mean,boxplot
+montant_total,boxplot
+n_jours_credit_mean,boxplot
+n_jours_credit_min,boxplot
+n_jours_credit_max,boxplot
+n_jours_retard_moyen,boxplot
+ratio_echeance_retard,boxplot
+ratio_approuve_demande,boxplot
+n_contrat_actif,boxplot
+montant_mensuel_actif,boxplot
+montant_dette_restante,boxplot
+n_jours_restant_mean,boxplot
+n_jours_restant_min,boxplot
+n_jours_restant_max,boxplot
+CNT_CHILDREN,boxplot
+AMT_INCOME_TOTAL,boxplot
+AMT_CREDIT,boxplot
+AMT_ANNUITY,boxplot
+REGION_POPULATION_RELATIVE,boxplot
+YEARS_BIRTH,boxplot
+DAYS_EMPLOYED,boxplot
+DAYS_REGISTRATION,boxplot
+DAYS_ID_PUBLISH,boxplot
+FLAG_MOBIL,countplot
+FLAG_EMP_PHONE,countplot
+FLAG_WORK_PHONE,countplot
+FLAG_CONT_MOBILE,countplot
+FLAG_PHONE,countplot
+FLAG_EMAIL,countplot
+CNT_FAM_MEMBERS,boxplot
+REGION_RATING_CLIENT,countplot
+HOUR_APPR_PROCESS_START,boxplot
+REG_REGION_NOT_LIVE_REGION,countplot
+LIVE_REGION_NOT_WORK_REGION,countplot
+REG_CITY_NOT_LIVE_CITY,countplot
+LIVE_CITY_NOT_WORK_CITY,countplot
+EXT_SOURCE_2,boxplot
+EXT_SOURCE_3,boxplot
+OBS_30_CNT_SOCIAL_CIRCLE,boxplot
+DEF_30_CNT_SOCIAL_CIRCLE,boxplot
+DAYS_LAST_PHONE_CHANGE,boxplot
+FLAG_DOCUMENT_2,countplot
+FLAG_DOCUMENT_3,countplot
+FLAG_DOCUMENT_4,countplot
+FLAG_DOCUMENT_5,countplot
+FLAG_DOCUMENT_6,countplot
+FLAG_DOCUMENT_7,countplot
+FLAG_DOCUMENT_8,countplot
+FLAG_DOCUMENT_9,countplot
+FLAG_DOCUMENT_10,countplot
+FLAG_DOCUMENT_11,countplot
+FLAG_DOCUMENT_12,countplot
+FLAG_DOCUMENT_13,countplot
+FLAG_DOCUMENT_14,countplot
+FLAG_DOCUMENT_15,countplot
+FLAG_DOCUMENT_16,countplot
+FLAG_DOCUMENT_17,countplot
+FLAG_DOCUMENT_18,countplot
+FLAG_DOCUMENT_19,countplot
+FLAG_DOCUMENT_20,countplot
+FLAG_DOCUMENT_21,countplot
+AMT_REQ_CREDIT_BUREAU_HOUR,countplot
+AMT_REQ_CREDIT_BUREAU_DAY,countplot
+AMT_REQ_CREDIT_BUREAU_WEEK,countplot
+AMT_REQ_CREDIT_BUREAU_MON,boxplot
+AMT_REQ_CREDIT_BUREAU_QRT,boxplot
+AMT_REQ_CREDIT_BUREAU_YEAR,boxplot
+Another type of loan,countplot
+Cash loans,boxplot
+Consumer credit,boxplot
+Consumer loans,boxplot
+Immo_credit,countplot
+Microloan,boxplot
+Revolving loans,boxplot
+business credit,countplot
+NAME_CONTRACT_TYPE,countplot
+CODE_GENDER,countplot
+FLAG_OWN_CAR,countplot
+FLAG_OWN_REALTY,countplot
+NAME_TYPE_SUITE_Children,countplot
+NAME_TYPE_SUITE_Family,countplot
+NAME_TYPE_SUITE_Group of people,countplot
+NAME_TYPE_SUITE_Other_A,countplot
+NAME_TYPE_SUITE_Other_B,countplot
+"NAME_TYPE_SUITE_Spouse, partner",countplot
+NAME_TYPE_SUITE_Unaccompanied,countplot
+NAME_TYPE_SUITE_nan,countplot
+NAME_INCOME_TYPE_Businessman,countplot
+NAME_INCOME_TYPE_Commercial associate,countplot
+NAME_INCOME_TYPE_Maternity leave,countplot
+NAME_INCOME_TYPE_Pensioner,countplot
+NAME_INCOME_TYPE_State servant,countplot
+NAME_INCOME_TYPE_Student,countplot
+NAME_INCOME_TYPE_Unemployed,countplot
+NAME_INCOME_TYPE_Working,countplot
+NAME_EDUCATION_TYPE_Academic degree,countplot
+NAME_EDUCATION_TYPE_Higher education,countplot
+NAME_EDUCATION_TYPE_Incomplete higher,countplot
+NAME_EDUCATION_TYPE_Lower secondary,countplot
+NAME_EDUCATION_TYPE_Secondary / secondary special,countplot
+NAME_FAMILY_STATUS_Civil marriage,countplot
+NAME_FAMILY_STATUS_Married,countplot
+NAME_FAMILY_STATUS_Separated,countplot
+NAME_FAMILY_STATUS_Single / not married,countplot
+NAME_FAMILY_STATUS_Unknown,countplot
+NAME_FAMILY_STATUS_Widow,countplot
+NAME_HOUSING_TYPE_Co-op apartment,countplot
+NAME_HOUSING_TYPE_House / apartment,countplot
+NAME_HOUSING_TYPE_Municipal apartment,countplot
+NAME_HOUSING_TYPE_Office apartment,countplot
+NAME_HOUSING_TYPE_Rented apartment,countplot
+NAME_HOUSING_TYPE_With parents,countplot
+WEEKDAY_APPR_PROCESS_START_FRIDAY,countplot
+WEEKDAY_APPR_PROCESS_START_MONDAY,countplot
+WEEKDAY_APPR_PROCESS_START_SATURDAY,countplot
+WEEKDAY_APPR_PROCESS_START_SUNDAY,countplot
+WEEKDAY_APPR_PROCESS_START_THURSDAY,countplot
+WEEKDAY_APPR_PROCESS_START_TUESDAY,countplot
+WEEKDAY_APPR_PROCESS_START_WEDNESDAY,countplot
+SK_ID_CURR,boxplot

@@ -1,0 +1,118 @@
+Row,Description,Source
+TARGET,"Target variable (1 - client with payment difficulties: he/she had late payment more than X days on at least one of the first Y installments of the loan in our sample, 0 - all other cases)",Application
+NAME_CONTRACT_TYPE,Identification if loan is cash or revolving,Application
+CODE_GENDER,Gender of the client,Application
+FLAG_OWN_CAR,Flag if the client owns a car,Application
+FLAG_OWN_REALTY,Flag if client owns a house or flat,Application
+CNT_CHILDREN,Number of children the client has,Application
+AMT_INCOME_TOTAL,Income of the client,Application
+AMT_CREDIT,Credit amount of the loan,Application
+AMT_ANNUITY,Loan annuity,Application
+AMT_GOODS_PRICE,For consumer loans it is the price of the goods for which the loan is given,Application
+NAME_TYPE_SUITE,Who was accompanying client when he was applying for the loan,Application
+NAME_INCOME_TYPE,"Clients income type (businessman, working, maternity leave,…)",Application
+NAME_EDUCATION_TYPE,Level of highest education the client achieved,Application
+NAME_FAMILY_STATUS,Family status of the client,Application
+NAME_HOUSING_TYPE,"What is the housing situation of the client (renting, living with parents, ...)",Application
+REGION_POPULATION_RELATIVE,Normalized population of region where client lives (higher number means the client lives in more populated region),Application
+DAYS_EMPLOYED,How many days before the application the person started current employment,Application
+DAYS_REGISTRATION,How many days before the application did client change his registration,Application
+DAYS_ID_PUBLISH,How many days before the application did client change the identity document with which he applied for the loan,Application
+FLAG_MOBIL,"Did client provide mobile phone (1=YES, 0=NO)",Application
+FLAG_EMP_PHONE,"Did client provide work phone (1=YES, 0=NO)",Application
+FLAG_WORK_PHONE,"Did client provide home phone (1=YES, 0=NO)",Application
+FLAG_CONT_MOBILE,"Was mobile phone reachable (1=YES, 0=NO)",Application
+FLAG_PHONE,"Did client provide home phone (1=YES, 0=NO)",Application
+FLAG_EMAIL,"Did client provide email (1=YES, 0=NO)",Application
+CNT_FAM_MEMBERS,How many family members does client have,Application
+REGION_RATING_CLIENT,"Our rating of the region where client lives (1,2,3)",Application
+REGION_RATING_CLIENT_W_CITY,"Our rating of the region where client lives with taking city into account (1,2,3)",Application
+WEEKDAY_APPR_PROCESS_START,On which day of the week did the client apply for the loan,Application
+HOUR_APPR_PROCESS_START,Approximately at what hour did the client apply for the loan,Application
+REG_REGION_NOT_LIVE_REGION,"Flag if client's permanent address does not match contact address (1=different, 0=same, at region level)",Application
+REG_REGION_NOT_WORK_REGION,"Flag if client's permanent address does not match work address (1=different, 0=same, at region level)",Application
+LIVE_REGION_NOT_WORK_REGION,"Flag if client's contact address does not match work address (1=different, 0=same, at region level)",Application
+REG_CITY_NOT_LIVE_CITY,"Flag if client's permanent address does not match contact address (1=different, 0=same, at city level)",Application
+REG_CITY_NOT_WORK_CITY,"Flag if client's permanent address does not match work address (1=different, 0=same, at city level)",Application
+LIVE_CITY_NOT_WORK_CITY,"Flag if client's contact address does not match work address (1=different, 0=same, at city level)",Application
+EXT_SOURCE_2,Normalized score from external data source,Application
+EXT_SOURCE_3,Normalized score from external data source,Application
+OBS_30_CNT_SOCIAL_CIRCLE,How many observation of client's social surroundings with observable 30 DPD (days past due) default,Application
+DEF_30_CNT_SOCIAL_CIRCLE,How many observation of client's social surroundings defaulted on 30 DPD (days past due) ,Application
+OBS_60_CNT_SOCIAL_CIRCLE,How many observation of client's social surroundings with observable 60 DPD (days past due) default,Application
+DEF_60_CNT_SOCIAL_CIRCLE,How many observation of client's social surroundings defaulted on 60 (days past due) DPD,Application
+DAYS_LAST_PHONE_CHANGE,How many days before application did client change phone,Application
+FLAG_DOCUMENT_2,Did client provide document 2,Application
+FLAG_DOCUMENT_3,Did client provide document 3,Application
+FLAG_DOCUMENT_4,Did client provide document 4,Application
+FLAG_DOCUMENT_5,Did client provide document 5,Application
+FLAG_DOCUMENT_6,Did client provide document 6,Application
+FLAG_DOCUMENT_7,Did client provide document 7,Application
+FLAG_DOCUMENT_8,Did client provide document 8,Application
+FLAG_DOCUMENT_9,Did client provide document 9,Application
+FLAG_DOCUMENT_10,Did client provide document 10,Application
+FLAG_DOCUMENT_11,Did client provide document 11,Application
+FLAG_DOCUMENT_12,Did client provide document 12,Application
+FLAG_DOCUMENT_13,Did client provide document 13,Application
+FLAG_DOCUMENT_14,Did client provide document 14,Application
+FLAG_DOCUMENT_15,Did client provide document 15,Application
+FLAG_DOCUMENT_16,Did client provide document 16,Application
+FLAG_DOCUMENT_17,Did client provide document 17,Application
+FLAG_DOCUMENT_18,Did client provide document 18,Application
+FLAG_DOCUMENT_19,Did client provide document 19,Application
+FLAG_DOCUMENT_20,Did client provide document 20,Application
+FLAG_DOCUMENT_21,Did client provide document 21,Application
+AMT_REQ_CREDIT_BUREAU_HOUR,Number of enquiries to Credit Bureau about the client one hour before application,Application
+AMT_REQ_CREDIT_BUREAU_DAY,Number of enquiries to Credit Bureau about the client one day before application (excluding one hour before application),Application
+AMT_REQ_CREDIT_BUREAU_WEEK,Number of enquiries to Credit Bureau about the client one week before application (excluding one day before application),Application
+AMT_REQ_CREDIT_BUREAU_MON,Number of enquiries to Credit Bureau about the client one month before application (excluding one week before application),Application
+AMT_REQ_CREDIT_BUREAU_QRT,Number of enquiries to Credit Bureau about the client 3 month before application (excluding one month before application),Application
+AMT_REQ_CREDIT_BUREAU_YEAR,Number of enquiries to Credit Bureau about the client one day year (excluding last 3 months before application),Application
+n_jours_retard_moyen,Average number of days of payment delay for previous loans,Engineered
+n_contrat_actif,Number of active lonas,Engineered
+montant_mensuel_min,Minimum monthly installment amount of previous loans,Engineered
+montant_mensuel_mean,Average monthly installment amount of previous loans,Engineered
+montant_total,Total loan amount,Engineered
+n_jours_credit_mean,Average previous loan duration (in days),Engineered
+n_jours_credit_min,Minimum loan duration (in days),Engineered
+n_jours_credit_max,Maximum loan duration (in days),Engineered
+montant_dette_restante,Remaining debt amount,Engineered
+n_jours_restant_mean,Average number of days remaining on loans,Engineered
+n_jours_restant_min,Minimum number of days remaining on loans,Engineered
+n_jours_restant_max,Maximum number of days remaining on loans,Engineered
+nb_credit_approuves,Number of approved loans,Engineered
+ratio_echeance_retard,Ratio of overdue installments to total installments,Engineered
+ratio_approuve_demande,Ratio of approved loans to total applications,Engineered
+montant_mensuel_actif,Monthly installment amount for active loans,Engineered
+Another type of loan,Number of another loan category,Engineered
+Cash loans,Number of cash loan products,Engineered
+Consumer credit,Number of consumer credit loans,Engineered
+Consumer loans,Number of consumer loan products,Engineered
+Immo_credit,Number of mortgage or real estate loans,Engineered
+Microloan,Number of microloan products,Engineered
+Revolving loans,Number of revolving credit products,Engineered
+business credit,Number of business-related loans,Engineered
+n_jours_retard_moyen,Average number of days of payment delay for previous loans,Engineered
+n_contrat_actif,Number of active lonas,Engineered
+montant_mensuel_min,Minimum monthly installment amount of previous loans,Engineered
+montant_mensuel_mean,Average monthly installment amount of previous loans,Engineered
+montant_total,Total loan amount,Engineered
+n_jours_credit_mean,Average previous loan duration (in days),Engineered
+n_jours_credit_min,Minimum loan duration (in days),Engineered
+n_jours_credit_max,Maximum loan duration (in days),Engineered
+montant_dette_restante,Remaining debt amount,Engineered
+n_jours_restant_mean,Average number of days remaining on loans,Engineered
+n_jours_restant_min,Minimum number of days remaining on loans,Engineered
+n_jours_restant_max,Maximum number of days remaining on loans,Engineered
+nb_credit_approuves,Number of approved loans,Engineered
+ratio_echeance_retard,Ratio of overdue installments to total installments,Engineered
+ratio_approuve_demande,Ratio of approved loans to total applications,Engineered
+montant_mensuel_actif,Monthly installment amount for active loans,Engineered
+Another type of loan,Number of another loan category,Engineered
+Cash loans,Number of cash loan products,Engineered
+Consumer credit,Number of consumer credit loans,Engineered
+Consumer loans,Number of consumer loan products,Engineered
+Immo_credit,Number of mortgage or real estate loans,Engineered
+Microloan,Number of microloan products,Engineered
+Revolving loans,Number of revolving credit products,Engineered
+business credit,Number of business-related loans,Engineered
