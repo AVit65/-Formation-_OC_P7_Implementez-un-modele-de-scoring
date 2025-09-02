@@ -51,13 +51,20 @@ if "api_status" not in st.session_state:
                 # Suppression du message après 5 secondes
                 time.sleep(5)  
                 status_placeholder.empty()
-                break
-            else:
 
-                # Affichage d'un message d'avertissement
+                break
+            # Cas codes temporaires (API en train de redémarrer / surcharge)
+            elif response.status_code in [429, 503]:
+                status_placeholder.info(
+                    f"API pas encore prête (code {response.status_code}), nouvel essai dans 5s..."
+                )
+
+            # Autres cas inattendus
+            else:
                 status_placeholder.warning(
                     f"L'API répond mais avec un code inattendu : {response.status_code}"
                 )
+
         except requests.exceptions.RequestException:
             # Le message reste affiché tant que l'API n'est pas prête
             pass
@@ -165,6 +172,8 @@ elif section == "Outil d'aide à la décision":
                     # Sinon affichage de l'erreur API
                     else:
                         st.error(f"Erreur API : {response.status_code} - {response.text}")
+                        st.session_state.pop("proba", None)
+                        st.session_state.pop("prediction", None)        
 
                 # Gestion des erreurs techniques python
                 except Exception as e:
