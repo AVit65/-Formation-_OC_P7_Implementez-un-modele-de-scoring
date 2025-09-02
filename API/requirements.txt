@@ -11,4 +11,6 @@ pytest-html==4.1.1
 httpx==0.27.0
 gunicorn==21.2.0
 requests==2.32.4
+shap==0.47.1
+
 
