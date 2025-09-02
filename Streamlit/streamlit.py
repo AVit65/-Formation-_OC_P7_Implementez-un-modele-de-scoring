@@ -48,8 +48,8 @@ if "api_status" not in st.session_state:
                 # Mise à jour de api_status
                 st.session_state.api_status = "ok"
                 
-                # Suppression du message après 3 secondes
-                time.sleep(3)  
+                # Suppression du message après 5 secondes
+                time.sleep(5)  
                 status_placeholder.empty()
                 break
             else:
@@ -62,8 +62,8 @@ if "api_status" not in st.session_state:
             # Le message reste affiché tant que l'API n'est pas prête
             pass
 
-        # Attente de 1 sec avant l'essai suivant
-        time.sleep(1)  
+        # Attente de 5 sec avant l'essai suivant
+        time.sleep(5)  
 
     else:
 
@@ -102,9 +102,9 @@ if section == "Présentation du Dashboard":
     
     Une présentation de l'outil est disponible dans la section <u><i> Presentation de l'outil </i></u>
                 
-    Pour obtenir la classe prédite par le modèle, seul l'identitiant de la demande est nécessaire. Les résultats peuvent être
+    Pour obtenir la classe prédite par le modèle, seul l'identifiant de la demande est nécessaire. Les résultats peuvent être
     visualisés sous la forme d'une jauge qui indique le niveau de risque de la demande dans la section 
-    <u><i>Outil d'aide à la décesion</i></u>.
+    <u><i>Outil d'aide à la décision</i></u>.
     A noter que le seuil utilisé pour décider si une demande est risquée ou non a été ajusté en fonction de critères définis par 
     les équipes métier afin de mieux refléter la réalité du risque. Ici le seuil utilisé est de . 
     
@@ -180,9 +180,9 @@ elif section == "Outil d'aide à la décision":
             # Affichage des résultats
             st.write("Probabilité de défaut :", round(proba, 2))
             st.write("La demande a été classée comme risquée"
-                    if st.session_state.prediction == 1 else "La demande a été classée comme peu risquée")
+                    if st.session_state.prediction == 1 else "La demande a été classée comme fiable")
 
-            # Ajout de la jauge jauge
+            # Ajout de la jauge
             fig = go.Figure(go.Indicator(
                 mode="gauge+number",
                 value=proba * 100,
