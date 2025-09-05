@@ -33,7 +33,7 @@ import uvicorn
 from Config import (
     PIPELINE_PATH,
     CLIENT_PATH,
-    DEFAULT_THRESHOLD,
+    THRESHOLD,
     DEFAULT_PORT
 )
 
@@ -114,7 +114,7 @@ async def predict(data: ClientID):
     prob_pos = pipeline.predict_proba(X)[0][1]
 
     # Prédiction de la classe 
-    prediction_seuil = 1 if prob_pos >= DEFAULT_THRESHOLD else 0
+    prediction_seuil = 1 if prob_pos >= THRESHOLD else 0
 
     return {"prediction": prediction_seuil, "proba": prob_pos}
 
