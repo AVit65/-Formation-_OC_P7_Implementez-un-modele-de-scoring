@@ -15,7 +15,7 @@ if str(project_root) not in sys.path:
     sys.path.append(str(project_root))
 
 # Import du fichier Config
-from Config import LOGO_PATH, DEFAULT_THRESHOLD
+from Config import LOGO_PATH, THRESHOLD
 
 #---------------------------------------------------------------------
 # Constantes
@@ -43,6 +43,32 @@ if not api_ready and st.sidebar.button("Réessayer"):
         st.sidebar.info("API opérationnelle ✅" if api_ready else "Impossible de joindre l'API ❌")
     except requests.exceptions.RequestException:
         st.sidebar.warning("Impossible de joindre l'API ❌")
+
+#----------------------------------------------------------------------------------------------------------------------
+# Fonctions
+#----------------------------------------------------------------------------------------------------------------------
+
+def plot_gauge(proba, colors, threshold=THRESHOLD):
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=proba * 100,
+        number={'suffix': "%", 'font': {'size': 55}},
+        title={'text': "Risque de défaut de paiment(%)", 'font': {'size': 28}},
+        gauge={
+            'axis': {'range': [0, 100],
+                     'tickfont' : {'size': 20, 'color':'black'}},
+            'bar': {'color': "black", 'thickness':0.3 },
+            'steps': [
+                {'range': [0, threshold*100-5], 'color': colors['low']},
+                {'range': [threshold*100-5, threshold*100+5], 'color': colors['mid']},
+                {'range': [threshold*100+5, 100], 'color': colors['high']}
+            ],
+            'threshold': {'line': {'color': "black", 'width': 4}, 'thickness': 0.8, 'value': threshold*100}
+        }
+    ))
+    fig.update_layout(width=350, height=300, margin=dict(l=20, r=20, t=80, b=20))
+    st.plotly_chart(fig, use_container_width=True)
+
 
 #----------------------------------------------------------------------------------------------------------------------
 # Menu
@@ -74,19 +100,19 @@ if section == "Présentation du Dashboard":
     - les demandes jugées peu risquées, qui pourront être acceptées,
     - les demandes jugées risquées, qui seront refusées.
     
-    Une présentation de l'outil est disponible dans la section <u><i> Presentation de l'outil </i></u>
+    Une présentation de l'outil est disponible dans la section <u><i> Présentation de l'outil </i></u>
                 
     Pour obtenir la classe prédite par le modèle, seul l'identifiant de la demande est nécessaire. Les résultats peuvent être
     visualisés sous la forme d'une jauge qui indique le niveau de risque de la demande dans la section 
     <u><i>Outil d'aide à la décision</i></u>.
     A noter que le seuil utilisé pour décider si une demande est risquée ou non a été ajusté en fonction de critères définis par 
-    les équipes métier afin de mieux refléter la réalité du risque. Ici le seuil utilisé est de **{DEFAULT_THRESHOLD:.2f}**. 
+    les équipes métier afin de mieux refléter la réalité du risque. Ici le seuil utilisé est de **{THRESHOLD:.2f}**. 
     
-    Ainsi les demandes dont la probabilité est inférieure à **{DEFAULT_THRESHOLD:.2f}**
-    seront jugées comment peu risquées et les demandes supérieur à ce seuil seront jugée comme risquées.
+    Ainsi les demandes dont la probabilité est inférieure à **{THRESHOLD:.2f}**
+    seront jugées comment peu risquées et celles dont la probabilité est supérieur à ce seuil seront jugée comme risquées.
                 
             
-    Le modèle a été construit à partir de différentes sources de données. Une description des variables utilisée par le 
+    Le modèle a été construit à partir de différentes sources de données. Une description des variables utilisées par le 
     modèle est fournie dans la section <u><i>Description des variables</i></u>. 
   
     
@@ -114,7 +140,7 @@ elif section == "Outil d'aide à la décision":
     # --------------------------------------------------------------------------------
     
     # Si l'utilisateur clique sur prédire
-    if st.button("Prédire"):
+    if st.button("Lancer la prédiction"):
         
         # Gestion du cas où l'ID est invalide
         if client_id < 0:
@@ -152,43 +178,52 @@ elif section == "Outil d'aide à la décision":
                 # Gestion des erreurs techniques python
                 except Exception as e:
                     st.error(f"Erreur lors de l'appel à l'API : {e}")
+            
+        
+    # Si proba a été stocké dans la session
+    if "proba" in st.session_state:
 
-        # Si proba a été stocké dans la session
-        if "proba" in st.session_state:
+        # Extraction de à la probas
+        proba = st.session_state.proba
 
-            # Accès à la probas
-            proba = st.session_state.proba
+        # Affichage des résultats
+        st.markdown(f"""
+                - Probabilité de défaut de paiement : **{round(st.session_state.proba, 2)}**
+                - {"La demande a été classée comme risquée  ❌" if st.session_state.prediction else "La demande a été classée comme fiable ✅"}
+                """)
+            
+        st.text("")
+        
+        # Checkbox pour activer le mode inclusif
+        daltonien_mode = st.checkbox("Afficher la jauge avec des couleurs inclusives")
 
-            # Affichage des résultats
-            st.write("Probabilité de défaut :", round(proba, 2))
-            st.write("La demande a été classée comme risquée"
-                    if st.session_state.prediction == 1 else "La demande a été classée comme fiable")
+        st.text("")
         
         # Affichage d'une jauge 
         # --------------------------------------------------------------------------------
+        
+
+        # Définition des palettes
+        if daltonien_mode:
+            # Palette optimisée daltonisme
+            colors = {
+                    "low": "#2ca02c" ,    
+                    "mid": "#F0E442",    
+                    "high": "#56B4E9"    
+                }
 
             # Ajout de la jauge
-            fig = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=proba * 100,
-                number={'suffix': "%"},
-                title={'text': "Risque (%)"},
-                gauge={
-                    'axis': {'range': [0, 100]},
-                    'bar': {'color': "black"},
-                    'steps': [
-                        {'range': [0, 53], 'color': "Gold"},
-                        {'range': [53, 100], 'color': "DarkSlateBlue"}
-                    ],
-                    'threshold': {'line': {'color': "black", 'width': 4}, 'thickness': 0.8, 'value': 53}
+            plot_gauge(st.session_state.proba, colors)
+        else:
+            # Palette standard
+            colors = {
+                    "low": "#2ca02c",    
+                    "mid": "#E69F00",    
+                    "high": "#ff6666"     
                 }
-            ))
 
-            # Mise en page
-            fig.update_layout(width=350, height=250, margin=dict(l=20, r=20, t=40, b=20))
-            
-            # Affichage dans streamlit
-            st.plotly_chart(fig, use_container_width=True)
+            # Ajout de la jauge
+            plot_gauge(st.session_state.proba, colors)
 
         # Séparateur après la jauge
         st.markdown("---")

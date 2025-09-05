@@ -11,5 +11,5 @@ CLIENT_PATH = BASE_DIR.parent / "Output" / "Data_clients" / "App_test_final.csv"
 LOGO_PATH = BASE_DIR.parent  / "Images" / "Logo.png"
 
 # Hyperparamètres / seuils
-DEFAULT_THRESHOLD = float(os.getenv("THRESHOLD", 0.53))
+THRESHOLD = 0.27
 DEFAULT_PORT = int(os.getenv("PORT", 8001))
