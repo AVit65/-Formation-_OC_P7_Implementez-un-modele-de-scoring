@@ -48,6 +48,7 @@ if not api_ready and st.sidebar.button("Réessayer"):
 # Fonctions
 #----------------------------------------------------------------------------------------------------------------------
 
+# Fonction pour construire une jauge indiquant le niveau du risque de défaut de paiment
 def plot_gauge(proba, colors, threshold=THRESHOLD):
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
@@ -130,11 +131,11 @@ elif section == "Outil d'aide à la décision":
     st.image(str(LOGO_PATH), use_column_width=True)
 
     # Ajout d'un titre
-    st.header("Prédiction du risque de défaut de paiment d'un client")
+    st.header("Prédiction du risque de défaut de paiement d'un client")
 
     # Saisie manuelle de l'ID client
-    client_id = st.number_input("Entrez l'ID de la demande", min_value=0, step=1, value=351445)
-    st.caption("Exemple : 351445")
+    client_id = st.number_input("Entrez l'ID de la demande", min_value=0, step=1, value=372777)
+    st.caption("Exemple : 372777")
 
     # Prédiction
     # --------------------------------------------------------------------------------
@@ -205,6 +206,7 @@ elif section == "Outil d'aide à la décision":
 
         # Définition des palettes
         if daltonien_mode:
+
             # Palette optimisée daltonisme
             colors = {
                     "low": "#2ca02c" ,    
@@ -214,7 +216,16 @@ elif section == "Outil d'aide à la décision":
 
             # Ajout de la jauge
             plot_gauge(st.session_state.proba, colors)
+
+            # Ajout d'une légende 
+            st.markdown("""
+                <div style="font-size:15px; margin-top:10px; text-align:center;">
+                <span style="display:inline-block; width:15px; height:15px; background-color:#2ca02c; margin-right:5px;"></span> Risque faible &nbsp;&nbsp;
+                <span style="display:inline-block; width:15px; height:15px; background-color:#F0E442; margin-right:5px;"></span> Zone intermédiaire &nbsp;&nbsp;
+                <span style="display:inline-block; width:15px; height:15px; background-color:#56B4E9; margin-right:5px;"></span> Risque élevé
+                </div>""", unsafe_allow_html=True)
         else:
+            
             # Palette standard
             colors = {
                     "low": "#2ca02c",    
@@ -224,6 +235,14 @@ elif section == "Outil d'aide à la décision":
 
             # Ajout de la jauge
             plot_gauge(st.session_state.proba, colors)
+
+            # Ajout d'une légende 
+            st.markdown("""
+                <div style="font-size:15px; margin-top:10px; text-align:center;">
+                <span style="display:inline-block; width:15px; height:15px; background-color:#2ca02c; margin-right:5px;"></span> Risque faible &nbsp;&nbsp;
+                <span style="display:inline-block; width:15px; height:15px; background-color:#E69F00; margin-right:5px;"></span> Zone intermédiaire &nbsp;&nbsp;
+                <span style="display:inline-block; width:15px; height:15px; background-color:#ff6666; margin-right:5px;"></span> Risque élevé
+                </div>""", unsafe_allow_html=True)
 
         # Séparateur après la jauge
         st.markdown("---")

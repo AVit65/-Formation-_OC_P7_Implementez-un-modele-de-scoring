@@ -85,12 +85,15 @@ class ClientID(BaseModel):
 # Définition des routes
 # ----------------------------------------------------------------------------
 
+# Route d'accueil
+# ----------------------------------------------------------------------------
+
 @app.get("/")
 def read_root():
     """Route d'accueil pour tester l'API"""
     return {"message": "Bienvenue sur mon API de scoring !"}
 
-# Prédiction du risque de défaut de paiment
+# Route de prédiction du risque de défaut de paiement
 # ----------------------------------------------------------------------------
 
 @app.post("/predict")
@@ -117,8 +120,6 @@ async def predict(data: ClientID):
     prediction_seuil = 1 if prob_pos >= THRESHOLD else 0
 
     return {"prediction": prediction_seuil, "proba": prob_pos}
-
-
 
 # ----------------------------------------------------------------------------
 # Lancement du serveur
