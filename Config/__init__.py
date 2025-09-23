@@ -1,7 +1,19 @@
 from .config import (
     PIPELINE_PATH,
     CLIENT_PATH,
+    VAR_DESC_ENG_PATH,
+    VAR_DESC_FR_PATH,
+    SHAP_VALUE_TEST_PATH,
+    SHAP_VALUE_TRAIN_PATH,
+    RAW_DATA_TEST_ALIGNED_PATH,
+    VARIABLE_TYPE_PATH,
+    COL_TYPE_PATH,
+    EXPLAINER_PATH,
     LOGO_PATH,
     THRESHOLD,
-    DEFAULT_PORT
+    DEFAULT_PORT,
+    MAPPING_DICT
 )
+
+from .client_data_model import ClientData
+
