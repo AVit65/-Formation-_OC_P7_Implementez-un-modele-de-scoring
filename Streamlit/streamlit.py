@@ -288,13 +288,15 @@ if section == "Présentation du Dashboard":
     st.header("Présentation du Dashboard")
     st.markdown(f"""
 
-    Ce dashboard permet de visualiser les résultats de prédictions de la proabilité de défaut de paiment d'un client demandant un crédit. 
-    Le modèle a été entrainé pour classer les demandes de crédits en deux catégories :
+    Ce dashboard permet de visualiser les résultats de prédictions de la probabilité de défaut de paiement d'un client demandant un crédit. 
+    Le modèle a été entraîné pour classer les demandes de crédits en deux catégories :
                 
     - les demandes jugées peu risquées, qui pourront être acceptées,
     - les demandes jugées risquées, qui seront refusées.
     
-    Une présentation de l'outil est disponible dans la section <u><i> Presentation de l'outil </i></u>
+    Une présentation de l'outil est disponible dans la section <u><i> Presentation de l'outil </i></u>. 
+    On pourra y trouver les sources des données utilisées pour construire l'outil de scoring ainsi qu'un 
+    graphique illustrant quelles caractéristiques influencent le plus les résultats de prédiction de manière globale.
                 
     Pour obtenir la classe prédite par le modèle, seul l'identifiant de la demande est nécessaire. Les résultats peuvent être
     visualisés sous la forme d'une jauge qui indique le niveau de risque de la demande dans la section 
@@ -303,11 +305,21 @@ if section == "Présentation du Dashboard":
     les équipes métier afin de mieux refléter la réalité du risque. Ici le seuil utilisé est de **{THRESHOLD:.2f}**. 
     
     Ainsi les demandes dont la probabilité est inférieure à **{THRESHOLD:.2f}**
-    seront jugées comment peu risquées et les demandes supérieur à ce seuil seront jugée comme risquées.
-                
+    seront jugées comme peu risquées et les demandes supérieur à ce seuil seront jugée comme risquées.
+
+    Dans cette section, il est également possible de voir la contribution des caractéristiques pour un client en particulier grâce à un graphique
+    indiquant quelles caractéristiques ont le plus pesé dans la décision, et dans quel sens. Une autre série de graphique pourra être visualisée 
+    dans le but de comparer la position du client par rapport aux autres demandes. Ces différents graphiques permettront d'aider le conseiller
+    financier à comprendre et à expliquer la décision renvoyée par le modèle.
+    
+    Il sera également possible de modifier les informations d’un client ou d'ajouter un nouveau dossier.
+    Cette fonctionnalité offre la possibilité de tester l’impact de changements concrets, comme une augmentation des revenus ou une diminution 
+    des dettes, et ainsi d’identifier les leviers qui pourraient améliorer le profil de risque d’un client. Cela permet non seulement d’évaluer 
+    une demande, mais aussi d’accompagner le client de manière constructive en lui indiquant sur quels aspects il peut agir pour renforcer son dossier.
+        
             
     Le modèle a été construit à partir de différentes sources de données. Une description des variables utilisée par le 
-    modèle est fournie dans la section <u><i>Description des variables</i></u>. 
+    modèle est disponible dans la section <u><i>Description des variables</i></u>. 
                 
     """, unsafe_allow_html=True)
 
@@ -336,10 +348,10 @@ elif section == "Présentation de l'outil":
         - Bureau Balance
 
         Les principales étapes de préparation ont consisté à supprimer les variables 
-        présentant plus de 20 % de valeurs manquantes et à corriger certaines valeurs aberrantes.
+        présentant plus de 25 % de valeurs manquantes et à corriger certaines valeurs aberrantes.
 
-        Au total, 85 variables ont été retenues pour l’entraînement du modèle.
-        Ci dessous, il est possible de visualiser quelles variable ont le plus contribuée au décision du modèle. 
+        Au total, 86 variables ont été retenues pour l’entraînement du modèle.
+        Ci dessous, il est possible de visualiser quelles variable ont le plus contribuée aux décisions du modèle. 
         
     """, unsafe_allow_html=True)
 
@@ -384,7 +396,7 @@ elif section == "Outil d'aide à la décision":
     # Ajout du client_id dans la session
     st.session_state.client_id_input = client_id
 
-    # États
+    # États des variables de sessions
     st.session_state.setdefault("page_formulaire", False)
     st.session_state.setdefault("data_modified", False)
     st.session_state.setdefault("modified_data", {})
@@ -558,6 +570,11 @@ elif section == "Outil d'aide à la décision":
                 st.session_state.prediction = result["prediction"]
                 st.session_state.data_modified = False
                 st.rerun()
+            else :
+                for key in ["client_id", "proba", "prediction"]:
+                    if key in st.session_state:
+                        del st.session_state[key]
+
 
     # Bouton pour modifier les données du client séléctionné
     with cols[1]:
