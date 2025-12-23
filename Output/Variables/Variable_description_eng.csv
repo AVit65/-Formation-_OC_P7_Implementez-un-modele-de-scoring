@@ -1,0 +1,87 @@
+Row,Description,Source,Type,Values,Utilisé,Type_Enc
+TARGET,"Target variable (1 - client with payment difficulties: he/she had late payment more than X days on at least one of the first Y installments of the loan in our sample, 0 - all other cases)",Application,int,,False,Unknown
+NAME_CONTRACT_TYPE,Identification if loan is cash or revolving,Application,cat,"Cash loans, Revolving loans",False,Label
+CODE_GENDER,Gender of the client,Application,cat,"F, M",True,Label
+FLAG_OWN_CAR,Flag if the client owns a car,Application,cat,"N, Y",True,Label
+FLAG_OWN_REALTY,Flag if client owns a house or flat,Application,cat,"N, Y",False,Label
+CNT_CHILDREN,Number of children the client has,Application,int,,False,Num
+AMT_INCOME_TOTAL,Income of the client,Application,float,,True,Num
+AMT_CREDIT,Credit amount of the loan,Application,float,,True,Num
+AMT_ANNUITY,Loan annuity,Application,float,,True,Num
+NAME_TYPE_SUITE,Who was accompanying client when he was applying for the loan,Application,cat,"Unaccompanied, Spouse, partner, Family, Other_B, Children, Group of people, Other_A",False,OneHot
+NAME_INCOME_TYPE,"Clients income type (businessman, working, maternity leave,…)",Application,cat,"Commercial associate, Working, Pensioner, State servant, Businessman, Unemployed, Student, Maternity leave",False,OneHot
+NAME_EDUCATION_TYPE,Level of highest education the client achieved,Application,cat,"Higher education, Secondary / secondary special, Incomplete higher, Lower secondary, Academic degree",True,OneHot
+NAME_FAMILY_STATUS,Family status of the client,Application,cat,"Married, Single / not married, Civil marriage, Separated, Widow, Unknown",False,OneHot
+NAME_HOUSING_TYPE,"What is the housing situation of the client (renting, living with parents, ...)",Application,cat,"House / apartment, Municipal apartment, With parents, Rented apartment, Co-op apartment, Office apartment",False,OneHot
+REGION_POPULATION_RELATIVE,Normalized population of region where client lives (higher number means the client lives in more populated region),Application,float,,True,Num
+DAYS_EMPLOYED,How many days before the application the person started current employment,Application,float,,True,Num
+DAYS_REGISTRATION,How many days before the application did client change his registration,Application,float,,True,Num
+DAYS_ID_PUBLISH,How many days before the application did client change the identity document with which he applied for the loan,Application,float,,True,Num
+FLAG_MOBIL,"Did client provide mobile phone (1=YES, 0=NO)",Application,int,,False,Num
+FLAG_EMP_PHONE,"Did client provide employer phone (1=YES, 0=NO)",Application,int,,False,Num
+FLAG_WORK_PHONE,"Did client provide work phone (1=YES, 0=NO)",Application,int,,False,Num
+FLAG_CONT_MOBILE,"Was mobile phone reachable (1=YES, 0=NO)",Application,int,,False,Num
+FLAG_PHONE,"Did client provide home phone (1=YES, 0=NO)",Application,int,,False,Num
+FLAG_EMAIL,"Did client provide email (1=YES, 0=NO)",Application,int,,False,Num
+REGION_RATING_CLIENT,"Our rating of the region where client lives (1,2,3)",Application,int,,False,Num
+WEEKDAY_APPR_PROCESS_START,On which day of the week did the client apply for the loan,Application,cat,"WEDNESDAY, TUESDAY, MONDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY",False,OneHot
+HOUR_APPR_PROCESS_START,Approximately at what hour did the client apply for the loan,Application,int,,True,Num
+REG_REGION_NOT_LIVE_REGION,"Flag if client's permanent address does not match contact address (1=different, 0=same, at region level)",Application,int,,False,Num
+LIVE_REGION_NOT_WORK_REGION,"Flag if client's contact address does not match work address (1=different, 0=same, at region level)",Application,int,,False,Num
+REG_CITY_NOT_LIVE_CITY,"Flag if client's permanent address does not match contact address (1=different, 0=same, at city level)",Application,int,,False,Num
+LIVE_CITY_NOT_WORK_CITY,"Flag if client's contact address does not match work address (1=different, 0=same, at city level)",Application,int,,False,Num
+EXT_SOURCE_2,Normalized score from external data source,Application,float,,True,Num
+EXT_SOURCE_3,Normalized score from external data source,Application,float,,True,Num
+OBS_30_CNT_SOCIAL_CIRCLE,How many observation of client's social surroundings with observable 30 DPD (days past due) default,Application,float,,False,Num
+DEF_30_CNT_SOCIAL_CIRCLE,How many observation of client's social surroundings defaulted on 30 DPD (days past due) ,Application,float,,False,Num
+DAYS_LAST_PHONE_CHANGE,How many days before application did client change phone,Application,float,,True,Num
+FLAG_DOCUMENT_2,Did client provide document 2,Application,int,,False,Num
+FLAG_DOCUMENT_3,Did client provide document 3,Application,int,,False,Num
+FLAG_DOCUMENT_4,Did client provide document 4,Application,int,,False,Num
+FLAG_DOCUMENT_5,Did client provide document 5,Application,int,,False,Num
+FLAG_DOCUMENT_6,Did client provide document 6,Application,int,,False,Num
+FLAG_DOCUMENT_7,Did client provide document 7,Application,int,,False,Num
+FLAG_DOCUMENT_8,Did client provide document 8,Application,int,,False,Num
+FLAG_DOCUMENT_9,Did client provide document 9,Application,int,,False,Num
+FLAG_DOCUMENT_10,Did client provide document 10,Application,int,,False,Num
+FLAG_DOCUMENT_11,Did client provide document 11,Application,int,,False,Num
+FLAG_DOCUMENT_12,Did client provide document 12,Application,int,,False,Num
+FLAG_DOCUMENT_13,Did client provide document 13,Application,int,,False,Num
+FLAG_DOCUMENT_14,Did client provide document 14,Application,int,,False,Num
+FLAG_DOCUMENT_15,Did client provide document 15,Application,int,,False,Num
+FLAG_DOCUMENT_16,Did client provide document 16,Application,int,,False,Num
+FLAG_DOCUMENT_17,Did client provide document 17,Application,int,,False,Num
+FLAG_DOCUMENT_18,Did client provide document 18,Application,int,,False,Num
+FLAG_DOCUMENT_19,Did client provide document 19,Application,int,,False,Num
+FLAG_DOCUMENT_20,Did client provide document 20,Application,int,,False,Num
+FLAG_DOCUMENT_21,Did client provide document 21,Application,int,,False,Num
+AMT_REQ_CREDIT_BUREAU_HOUR,Number of enquiries to Credit Bureau about the client one hour before application,Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_DAY,Number of enquiries to Credit Bureau about the client one day before application (excluding one hour before application),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_WEEK,Number of enquiries to Credit Bureau about the client one week before application (excluding one day before application),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_MON,Number of enquiries to Credit Bureau about the client one month before application (excluding one week before application),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_QRT,Number of enquiries to Credit Bureau about the client 3 month before application (excluding one month before application),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_YEAR,Number of enquiries to Credit Bureau about the client one day year (excluding last 3 months before application),Application,float,,False,Num
+n_jours_retard_moyen,Average number of days of payment delay for previous loans,Engineered,float,,True,Num
+n_contrat_actif,Number of active lonas,Engineered,float,,True,Num
+montant_mensuel_min,Minimum monthly installment amount of previous loans,Engineered,float,,True,Num
+montant_mensuel_mean,Average monthly installment amount of previous loans,Engineered,float,,True,Num
+montant_total,Total loan amount,Engineered,float,,True,Num
+n_jours_credit_mean,Average previous loan duration (in days),Engineered,float,,True,Num
+n_jours_credit_min,Minimum loan duration (in days),Engineered,float,,True,Num
+n_jours_credit_max,Maximum loan duration (in days),Engineered,float,,True,Num
+montant_dette_restante,Remaining debt amount,Engineered,float,,True,Num
+n_jours_restant_mean,Average number of days remaining on loans,Engineered,float,,True,Num
+n_jours_restant_min,Minimum number of days remaining on loans,Engineered,float,,False,Num
+n_jours_restant_max,Maximum number of days remaining on loans,Engineered,float,,True,Num
+nb_credit_approuves,Number of approved loans,Engineered,float,,True,Num
+ratio_echeance_retard,Ratio of overdue installments to total installments,Engineered,float,,True,Num
+ratio_approuve_demande,Ratio of approved loans to total applications,Engineered,float,,True,Num
+montant_mensuel_actif,Monthly installment amount for active loans,Engineered,float,,True,Num
+Another type of loan,Number of another loan category,Engineered,float,,False,Num
+Cash loans,Number of cash loan products,Engineered,float,,True,Num
+Consumer credit,Number of consumer credit loans,Engineered,float,,True,Num
+Consumer loans,Number of consumer loan products,Engineered,float,,True,Num
+Immo_credit,Number of mortgage or real estate loans,Engineered,float,,False,Num
+Microloan,Number of microloan products,Engineered,float,,False,Num
+Revolving loans,Number of revolving credit products,Engineered,float,,False,Num
+business credit,Number of business-related loans,Engineered,float,,False,Num

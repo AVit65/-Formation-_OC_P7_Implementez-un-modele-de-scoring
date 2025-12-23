@@ -1,0 +1,87 @@
+Row,Description,Source,Type,Values,Utilisé,Type_Enc
+TARGET,"Variable cible (1 = client avec des difficultés de paiement : il/elle a eu un retard de paiement de plus de X jours sur au moins une des Y premières mensualités du prêt dans notre échantillon, 0 = tous les autres cas)",Application,int,,False,Unknown
+NAME_CONTRACT_TYPE,Identification si le prêt est un crédit cash ou revolving,Application,cat,"Cash loans, Revolving loans",False,Label
+CODE_GENDER,Sexe du client,Application,cat,"F, M",True,Label
+FLAG_OWN_CAR,Indicateur si le client possède une voiture,Application,cat,"N, Y",True,Label
+FLAG_OWN_REALTY,Indicateur si le client possède une maison ou un appartement,Application,cat,"N, Y",False,Label
+CNT_CHILDREN,Nombre d’enfants du client,Application,int,,False,Num
+AMT_INCOME_TOTAL,Revenu du client,Application,float,,True,Num
+AMT_CREDIT,Montant du crédit demandé,Application,float,,True,Num
+AMT_ANNUITY,Annuité du prêt,Application,float,,True,Num
+NAME_TYPE_SUITE,Personne qui accompagnait le client lors de la demande de crédit,Application,cat,"Unaccompanied, Spouse, partner, Family, Other_B, Children, Group of people, Other_A",False,OneHot
+NAME_INCOME_TYPE,"Type de revenu du client (salarié, indépendant, congé maternité, …)",Application,cat,"Commercial associate, Working, Pensioner, State servant, Businessman, Unemployed, Student, Maternity leave",False,OneHot
+NAME_EDUCATION_TYPE,Niveau d’éducation le plus élevé atteint par le client,Application,cat,"Higher education, Secondary / secondary special, Incomplete higher, Lower secondary, Academic degree",True,OneHot
+NAME_FAMILY_STATUS,Situation familiale du client,Application,cat,"Married, Single / not married, Civil marriage, Separated, Widow, Unknown",False,OneHot
+NAME_HOUSING_TYPE,"Situation de logement du client (locataire, vit chez ses parents, …)",Application,cat,"House / apartment, Municipal apartment, With parents, Rented apartment, Co-op apartment, Office apartment",False,OneHot
+REGION_POPULATION_RELATIVE,Population normalisée de la région où vit le client (valeur élevée = région plus peuplée),Application,float,,True,Num
+DAYS_EMPLOYED,Nombre de jours entre la date de début de l’emploi actuel et la demande de prêt,Application,float,,True,Num
+DAYS_REGISTRATION,Nombre de jours entre le changement d’adresse de résidence et la demande de prêt,Application,float,,True,Num
+DAYS_ID_PUBLISH,Nombre de jours entre le changement de document d’identité et la demande de prêt,Application,float,,True,Num
+FLAG_MOBIL,"Le client a fourni un numéro de téléphone portable (1 = OUI, 0 = NON)",Application,int,,False,Num
+FLAG_EMP_PHONE,"Le client a fourni un numéro de téléphone de son entreprise (1 = OUI, 0 = NON)",Application,int,,False,Num
+FLAG_WORK_PHONE,"Le client a fourni un numéro de téléphone professionnel (1 = OUI, 0 = NON)",Application,int,,False,Num
+FLAG_CONT_MOBILE,"Le téléphone portable du client était joignable (1 = OUI, 0 = NON)",Application,int,,False,Num
+FLAG_PHONE,"Le client a fourni un numéro de téléphone fixe (1 = OUI, 0 = NON)",Application,int,,False,Num
+FLAG_EMAIL,"Le client a fourni un email (1 = OUI, 0 = NON)",Application,int,,False,Num
+REGION_RATING_CLIENT,"Notre notation de la région de résidence du client (1, 2, 3)",Application,int,,False,Num
+WEEKDAY_APPR_PROCESS_START,Jour de la semaine de la demande de crédit,Application,cat,"WEDNESDAY, TUESDAY, MONDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY",False,OneHot
+HOUR_APPR_PROCESS_START,Heure approximative de la demande de crédit,Application,int,,True,Num
+REG_REGION_NOT_LIVE_REGION,"Indicateur si l’adresse permanente ≠ adresse de contact (1 = différente, 0 = identique, au niveau région)",Application,int,,False,Num
+LIVE_REGION_NOT_WORK_REGION,"Indicateur si l’adresse de contact ≠ adresse professionnelle (1 = différente, 0 = identique, au niveau région)",Application,int,,False,Num
+REG_CITY_NOT_LIVE_CITY,"Indicateur si l’adresse permanente ≠ adresse de contact (1 = différente, 0 = identique, au niveau ville)",Application,int,,False,Num
+LIVE_CITY_NOT_WORK_CITY,"Indicateur si l’adresse de contact ≠ adresse professionnelle (1 = différente, 0 = identique, au niveau ville)",Application,int,,False,Num
+EXT_SOURCE_2,Score normalisé provenant d’une source de données externe,Application,float,,True,Num
+EXT_SOURCE_3,Score normalisé provenant d’une source de données externe,Application,float,,True,Num
+OBS_30_CNT_SOCIAL_CIRCLE,Nombre d’observations dans l’entourage social du client avec un défaut de paiement ≥ 30 jours,Application,float,,False,Num
+DEF_30_CNT_SOCIAL_CIRCLE,Nombre d’observations dans l’entourage social du client ayant effectivement eu un défaut ≥ 30 jours,Application,float,,False,Num
+DAYS_LAST_PHONE_CHANGE,Nombre de jours entre le changement de téléphone et la demande de prêt,Application,float,,True,Num
+FLAG_DOCUMENT_2,Le client a fourni le document 2,Application,int,,False,Num
+FLAG_DOCUMENT_3,Le client a fourni le document 3,Application,int,,False,Num
+FLAG_DOCUMENT_4,Le client a fourni le document 4,Application,int,,False,Num
+FLAG_DOCUMENT_5,Le client a fourni le document 5,Application,int,,False,Num
+FLAG_DOCUMENT_6,Le client a fourni le document 6,Application,int,,False,Num
+FLAG_DOCUMENT_7,Le client a fourni le document 7,Application,int,,False,Num
+FLAG_DOCUMENT_8,Le client a fourni le document 8,Application,int,,False,Num
+FLAG_DOCUMENT_9,Le client a fourni le document 9,Application,int,,False,Num
+FLAG_DOCUMENT_10,Le client a fourni le document 10,Application,int,,False,Num
+FLAG_DOCUMENT_11,Le client a fourni le document 11,Application,int,,False,Num
+FLAG_DOCUMENT_12,Le client a fourni le document 12,Application,int,,False,Num
+FLAG_DOCUMENT_13,Le client a fourni le document 13,Application,int,,False,Num
+FLAG_DOCUMENT_14,Le client a fourni le document 14,Application,int,,False,Num
+FLAG_DOCUMENT_15,Le client a fourni le document 15,Application,int,,False,Num
+FLAG_DOCUMENT_16,Le client a fourni le document 16,Application,int,,False,Num
+FLAG_DOCUMENT_17,Le client a fourni le document 17,Application,int,,False,Num
+FLAG_DOCUMENT_18,Le client a fourni le document 18,Application,int,,False,Num
+FLAG_DOCUMENT_19,Le client a fourni le document 19,Application,int,,False,Num
+FLAG_DOCUMENT_20,Le client a fourni le document 20,Application,int,,False,Num
+FLAG_DOCUMENT_21,Le client a fourni le document 21,Application,int,,False,Num
+AMT_REQ_CREDIT_BUREAU_HOUR,Nombre de demandes d’information auprès du Bureau de crédit une heure avant la demande,Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_DAY,Nombre de demandes d’information auprès du Bureau de crédit un jour avant la demande (hors dernière heure),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_WEEK,Nombre de demandes d’information auprès du Bureau de crédit une semaine avant la demande (hors dernier jour),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_MON,Nombre de demandes d’information auprès du Bureau de crédit un mois avant la demande (hors dernière semaine),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_QRT,Nombre de demandes d’information auprès du Bureau de crédit trois mois avant la demande (hors dernier mois),Application,float,,False,Num
+AMT_REQ_CREDIT_BUREAU_YEAR,Nombre de demandes d’information auprès du Bureau de crédit un an avant la demande (hors trois derniers mois),Application,float,,False,Num
+n_jours_retard_moyen,Nombre moyen de jours de retard de paiement sur les prêts précédents,Engineered,float,,True,Num
+n_contrat_actif,Nombre de prêts actifs,Engineered,float,,True,Num
+montant_mensuel_min,Montant minimal des mensualités des prêts précédents,Engineered,float,,True,Num
+montant_mensuel_mean,Montant moyen des mensualités des prêts précédents,Engineered,float,,True,Num
+montant_total,Montant total des prêts précédents,Engineered,float,,True,Num
+n_jours_credit_mean,Durée moyenne des prêts précédents (en jours),Engineered,float,,True,Num
+n_jours_credit_min,Durée minimale des prêts précédents (en jours),Engineered,float,,True,Num
+n_jours_credit_max,Durée maximale des prêts précédents (en jours),Engineered,float,,True,Num
+montant_dette_restante,Montant de la dette restante,Engineered,float,,True,Num
+n_jours_restant_mean,Durée moyenne restante des prêts,Engineered,float,,True,Num
+n_jours_restant_min,Durée minimale restante des prêts,Engineered,float,,False,Num
+n_jours_restant_max,Durée maximale restante des prêts,Engineered,float,,True,Num
+nb_credit_approuves,Nombre de prêts approuvés,Engineered,float,,True,Num
+ratio_echeance_retard,Ratio des mensualités en retard sur le total des mensualités,Engineered,float,,True,Num
+ratio_approuve_demande,Ratio des prêts approuvés sur le total des demandes,Engineered,float,,True,Num
+montant_mensuel_actif,Montant de la mensualité des prêts actifs,Engineered,float,,True,Num
+Another type of loan,Nombre d’autres catégories de prêts,Engineered,float,,False,Num
+Cash loans,Nombre de prêts cash,Engineered,float,,True,Num
+Consumer credit,Nombre de crédits à la consommation,Engineered,float,,True,Num
+Consumer loans,Nombre de produits de crédit à la consommation,Engineered,float,,True,Num
+Immo_credit,Nombre de prêts immobiliers ou hypothécaires,Engineered,float,,False,Num
+Microloan,Nombre de micro-crédits,Engineered,float,,False,Num
+Revolving loans,Nombre de crédits revolving,Engineered,float,,False,Num
+business credit,Nombre de prêts liés à une activité professionnelle,Engineered,float,,False,Num
