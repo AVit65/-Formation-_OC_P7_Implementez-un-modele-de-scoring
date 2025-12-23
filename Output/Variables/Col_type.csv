@@ -1,0 +1,36 @@
+variable,col_type
+nb_credit_approuves,Other
+montant_mensuel_min,Other
+montant_total,Other
+montant_mensuel_mean,Other
+n_jours_credit_mean,Other
+n_jours_credit_min,Other
+n_jours_credit_max,Other
+n_jours_retard_moyen,Other
+ratio_echeance_retard,Other
+ratio_approuve_demande,Other
+n_contrat_actif,Other
+montant_mensuel_actif,Other
+montant_dette_restante,Other
+n_jours_restant_mean,Other
+n_jours_restant_max,Other
+AMT_INCOME_TOTAL,Other
+AMT_CREDIT,Other
+AMT_ANNUITY,Other
+REGION_POPULATION_RELATIVE,Other
+YEARS_BIRTH,Other
+DAYS_EMPLOYED,Other
+DAYS_REGISTRATION,Other
+DAYS_ID_PUBLISH,Other
+HOUR_APPR_PROCESS_START,Other
+EXT_SOURCE_2,Other
+EXT_SOURCE_3,Other
+DAYS_LAST_PHONE_CHANGE,Other
+Cash loans,Other
+Consumer credit,Other
+Consumer loans,Other
+CODE_GENDER,Label
+FLAG_OWN_CAR,Label
+Higher education,OneHot
+SK_ID_CURR,Other
+TARGET,Other
